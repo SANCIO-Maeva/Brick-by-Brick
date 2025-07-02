@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7995136829284167128}
   - component: {fileID: 3663269394607893145}
   m_Layer: 0
-  m_Name: Brick
+  m_Name: BrickSolide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1447673167173226883, guid: 108ce24ff47654dbabb95c063f6f5127, type: 3}
+  m_Sprite: {fileID: -5675765125158142219, guid: 108ce24ff47654dbabb95c063f6f5127, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -175,5 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0270736514eaa4c79868cc50f78ce574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 1
-  points: 5
+  hitPoints: 4
+  points: 20

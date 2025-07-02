@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
     public float limitX = 8f;
     private Rigidbody2D _rb;
 
+    private Vector2 _touchStartPos;
+    private bool _isDragging = false;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -13,8 +16,35 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        float moveInput = Input.GetAxis("Horizontal");
-        Vector2 velocity = new Vector2(moveInput * moveSpeed, 0f);
+        float moveInput = 0f;
+
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    _touchStartPos = touch.position;
+                    _isDragging = true;
+                    break;
+
+                case TouchPhase.Moved:
+                    if (_isDragging)
+                    {
+                        float deltaX = touch.position.x - _touchStartPos.x;
+                        moveInput = Mathf.Clamp(deltaX / Screen.width * 5f, -1f, 1f); // Normalise et limite
+                    }
+                    break;
+
+                case TouchPhase.Ended:
+                case TouchPhase.Canceled:
+                    _isDragging = false;
+                    break;
+            }
+        }
+
+        Vector2 velocity = new Vector2(moveInput * moveSpeed, _rb.linearVelocity.y);
         _rb.linearVelocity = velocity;
 
         // Limite la position horizontale

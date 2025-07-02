@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BricksManager : MonoBehaviour
 {
-    public GameObject brickPrefab;
+    public GameObject[] brickPrefabs;
+
     public int rows = 5;
     public int columns = 8;
-    public float spacing = 0.2f; 
+    public float spacing = 0.2f;
 
     public Vector2 startPosition = new Vector2(-7f, 4f);
     public Vector2 brickSize = new Vector2(1.5f, 0.6f);
@@ -26,7 +28,10 @@ public class BricksManager : MonoBehaviour
                     startPosition.y - row * (brickSize.y + spacing)
                 );
 
-                Instantiate(brickPrefab, spawnPos, Quaternion.identity, transform);
+                int randomIndex = Random.Range(0, brickPrefabs.Length);
+                GameObject selectedBrick = brickPrefabs[randomIndex];
+
+                Instantiate(selectedBrick, spawnPos, Quaternion.identity, transform);
             }
         }
     }
