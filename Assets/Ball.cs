@@ -22,13 +22,17 @@ public class Ball : MonoBehaviour
         maxY = bounds.y;
     }
 
+    /*
+    * Tant que la balle n'est pas lancée, elle suit la raquette.
+    * Au clic ou au toucher, elle est lancée.
+    * Si la balle tombe en dessous de l'écran, elle est réinitialisée
+    */
     void Update()
     {
         if (!launched)
         {
             transform.position = paddle.position + offset;
-
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.touchCount > 0)
+            if ( Input.GetMouseButtonDown(0) || Input.touchCount > 0)
                 Launch();
         }
 
@@ -44,10 +48,8 @@ public class Ball : MonoBehaviour
 
         if ((transform.position.x <= minX && v.x < 0) || (transform.position.x >= maxX && v.x > 0))
             v.x *= -1;
-
         if (transform.position.y >= maxY && v.y > 0)
-            v.y *= -1;
-
+            v.y *= -5;
         rb.linearVelocity = v.normalized * speed;
     }
 
@@ -55,10 +57,16 @@ public class Ball : MonoBehaviour
     {
         launched = true;
         rb.isKinematic = false;
-        rb.linearVelocity = new Vector2(Random.Range(-1f, 1f), 1f).normalized * speed;
+
+        /// donne une vitesse et une direction aléatoire à la balle au lancement ///
+        rb.linearVelocity = new Vector2(Random.Range(-2f, 1f), 1f).normalized * speed;
     }
 
-void ResetBall()
+    /*
+    * Reinitialise la balle si elle tombe
+    * et enlève un point de vie au joueur.
+    */
+    void ResetBall()
 {
     launched = false;
     rb.linearVelocity = Vector2.zero;

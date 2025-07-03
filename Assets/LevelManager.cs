@@ -5,7 +5,7 @@ public class LevelManager : MonoBehaviour
 {
     void Update()
     {
-        // Vérifie s'il reste des briques
+        /// Vérifie s'il reste des briques ///
         if (GameObject.FindGameObjectsWithTag("Brick").Length == 0)
         {
             LoadNextLevel();
@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
-        // Vérifie qu'on ne dépasse pas le nombre de scènes disponibles
+        /// Vérifie qu'on ne dépasse pas le nombre de scènes disponibles ///
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(nextSceneIndex);

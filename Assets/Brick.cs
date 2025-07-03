@@ -20,7 +20,7 @@ public class Brick : MonoBehaviour
 
     void DestroyBrick()
     {
-        // Ajoute les points au score
+        /// Ajoute les points au score ///
         GameManager.Instance.UpdateScore(points);
         Destroy(gameObject);
     }

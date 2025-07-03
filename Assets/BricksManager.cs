@@ -17,20 +17,28 @@ public class BricksManager : MonoBehaviour
         GenerateBricks();
     }
 
+    /*
+    * Génère une grille de briques au lancement du jeu.
+    * Chaque brique est choisie aléatoirement parmi les prefabs disponibles.
+    * Les positions sont calculées en fonction du nombre de colonnes, lignes, espacement et taille.
+    */
     void GenerateBricks()
     {
         for (int row = 0; row < rows; row++)
         {
             for (int col = 0; col < columns; col++)
             {
+                /// calcule la position de la brique ///
                 Vector2 spawnPos = new Vector2(
                     startPosition.x + col * (brickSize.x + spacing),
                     startPosition.y - row * (brickSize.y + spacing)
                 );
 
+                /// sélectionne un prefab de brique au hasard ///
                 int randomIndex = Random.Range(0, brickPrefabs.Length);
                 GameObject selectedBrick = brickPrefabs[randomIndex];
 
+                /// instancie la brique dans la scène, en tant qu'enfant de ce GameObject ///
                 Instantiate(selectedBrick, spawnPos, Quaternion.identity, transform);
             }
         }

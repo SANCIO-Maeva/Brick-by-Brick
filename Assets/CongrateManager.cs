@@ -5,7 +5,7 @@ public class CongrateManager : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Home");
+        Application.LoadLevel("Home");
     }
 
 }
