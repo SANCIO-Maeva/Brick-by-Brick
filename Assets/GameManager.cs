@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
         if (health <= 0)
         {
-            SceneManager.LoadScene("Home");
+            SceneManager.LoadScene("GameOver");
         }
     }
 }

@@ -1048,8 +1048,8 @@ MonoBehaviour:
   - {fileID: 7707901549095950119, guid: 6f7a702157f94441ea955458ea7e1bf4, type: 3}
   - {fileID: 7707901549095950119, guid: b50b66ef453334560a3025fad9532bab, type: 3}
   - {fileID: 7707901549095950119, guid: f2399b40e53c44d3eb013ed895ae8796, type: 3}
-  rows: 10
-  columns: 7
+  rows: 0
+  columns: 0
   spacing: -1
   startPosition: {x: -1.5, y: 0}
   brickSize: {x: 1.5, y: 0.6}
@@ -1063,6 +1063,50 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.93024, y: -0.55669, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1345911469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1345911471}
+  - component: {fileID: 1345911470}
+  m_Layer: 0
+  m_Name: Level Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1345911470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345911469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f317da7745f574af79cad2ec50ce8192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1345911471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345911469}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.27798, y: -4.54793, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1264,3 +1308,4 @@ SceneRoots:
   - {fileID: 98139031}
   - {fileID: 1382662245}
   - {fileID: 1195122327}
+  - {fileID: 1345911471}
