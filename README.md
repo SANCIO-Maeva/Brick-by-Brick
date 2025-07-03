@@ -5,6 +5,7 @@ Image de fond : Générer par ChatGPT
 Aide au déploiement : https://www.youtube.com/watch?v=a7yXl4V7IvY
 
 Difficultés rencontrées :
+-  Ne trouvre plus comment changer de nom d'application
 -  Incrémentation du Score inexisatante après avoir perdu une partie
 -  Perte de partie instantané après la première perte de partie
 -  TouchePhase ne suis pas le doigt de manière synchronisé
